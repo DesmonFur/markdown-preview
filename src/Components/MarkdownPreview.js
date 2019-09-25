@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 // import marked from 'marked';
-import Preview from './Preview'
+import Preview from "./Preview";
 
 export default function MarkDownPreview() {
   const [count, setCount] = useState(0);
@@ -49,15 +49,18 @@ export default function MarkDownPreview() {
   * And last but not least, let's not forget embedded images:
   
   ![React Logo w/ Text](https://goo.gl/Umyytc)
-  `
-  );
-    
+  `);
+
   return (
-    <div>
-        <p>{text}</p>
-<textarea id="'editor" cols="30" rows="10" value={text} onChange={(e) => setText(e.target.value)}></textarea>
-<Preview markdown={text}/>
+    <div id='side-by-side'>
+      <textarea
+        id='editor'
+        cols="1"
+        rows="1"
+        value={text}
+        onChange={e => setText(e.target.value)}
+      ></textarea>
+      <Preview markdown={text} />
     </div>
   );
 }
-
